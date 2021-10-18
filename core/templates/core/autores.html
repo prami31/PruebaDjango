@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+
+{% block contenido %}
+  <h1>Autores</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nombres</th>
+          <th>Apellidos</th>
+          <th>Ciudad</th>
+          <th>Ver</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for autor in autores %}
+        <tr>
+          <td>{{ autor.nombres }}</td>
+          <td>{{ autor.apellidos }}</td>
+          <td>{{ autor.ciudad }}</td>
+          <td>
+          <a href="{% url "core:ver_libros" autor.id %}">Ver libros</a>
+          <a href="{% url "core:editar_autor" autor.id %}">Editar autor</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+{% endblock %}

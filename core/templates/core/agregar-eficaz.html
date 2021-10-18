@@ -1,0 +1,12 @@
+{% extends 'core/base.html' %} {% block contenido %}
+<h1>Agregar autor</h1>
+<form action="" method="POST">
+  {{ autor_form.as_p }}
+
+  <table class="table table-bordered">
+    {{ libro_form.as_table }}
+  </table>
+  <button class="btn btn-primary">Guardar</button>
+  {% csrf_token %}
+</form>
+{% endblock %}

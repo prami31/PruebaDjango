@@ -1,0 +1,62 @@
+{% extends 'core/base.html' %} {% block contenido %}
+<h1>Agregar autor</h1>
+<form action="" method="POST">
+  <div class="form-group">
+    <label for="">Nombres</label>
+    <input type="text" class="form-control" name="nombres" required />
+  </div>
+  <div class="form-group">
+    <label for="">Apellidos</label>
+    <input type="text" class="form-control" name="apellidos" required />
+  </div>
+  <div class="form-group">
+    <label for="">Ciudad</label>
+    <input type="text" class="form-control" name="ciudad" required />
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Titulo</th>
+        <th>Fecha</th>
+        <th>Hojas</th>
+      </tr>
+    </thead>
+    <tr>
+      <td>
+        <input type="text" name="titulo[]" id="" />
+      </td>
+      <td>
+        <input type="date" name="fecha_publicacion[]" id="" />
+      </td>
+      <td>
+        <input type="number" name="numero_hojas[]" id="" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" name="titulo[]" id="" />
+      </td>
+      <td>
+        <input type="date" name="fecha_publicacion[]" id="" />
+      </td>
+      <td>
+        <input type="number" name="numero_hojas[]" id="" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" name="titulo[]" id="" />
+      </td>
+      <td>
+        <input type="date" name="fecha_publicacion[]" id="" />
+      </td>
+      <td>
+        <input type="number" name="hojas" id="" />
+      </td>
+    </tr>
+  </table>
+  {% csrf_token %}
+  <button class="btn btn-primary">Guardar</button>
+</form>
+{% endblock %}
